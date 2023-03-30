@@ -4,17 +4,19 @@
  * express or implied.
  * 
  */
+require('dotenv').config();
 const amqp = require('amqplib/callback_api');
 const queue = 'tasks';
 const RETRY_INTERVAL = 2000;
 const SEND_INTERVAL = 500;
 const EXIT_TIMEOUT = 5 * 60 * 1000;
+
 const CONNECTION_OPTS = {
     protocol: 'amqps',
-    hostname: 'b-d5c2fa22-b6fc-4ed9-b0b5-bf264a3b35a0.mq.eu-west-1.amazonaws.com',
-    port: 5671,
-    username: 'rabbitmq-admin',
-    password: 'password@1234',
+    hostname: process.env.RABBIT_HOSTNAME,
+    port: parseInt(process.env.RABBIT_PORT),
+    username: process.env.RABBIT_USERNAME,
+    password: process.env.RABBIT_PASSWORD,
     locale: 'en_US',
     heartbeat: 60,
     vhost: '/',
