@@ -1,0 +1,15 @@
+{
+  "name": "rabbitmq-client-with-recovery",
+  "version": "1.0.0",
+  "description": "RabbitMQ client in nodejs with autorecovery",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "psour@amazon.co.uk",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3"
+  }
+}
